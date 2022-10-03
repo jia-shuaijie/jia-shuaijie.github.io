@@ -19,20 +19,20 @@
     <meta name="description" content="Mysql 是在后台开发时常用的数据库之一,也是一个比较容易上手学习的一个.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql">
-<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/index.html">
+<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/index.html">
 <meta property="og:site_name" content="黑色的小火苗">
 <meta property="og:description" content="Mysql 是在后台开发时常用的数据库之一,也是一个比较容易上手学习的一个.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616195202047_14984.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616200525923_11634.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616202751287_13367.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616202806434_6417.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616202821876_30708.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616195202047_14984.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616200525923_11634.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616202751287_13367.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616202806434_6417.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616202821876_30708.png">
 <meta property="article:published_time" content="2022-10-03T10:50:06.267Z">
 <meta property="article:modified_time" content="2022-10-03T12:51:21.315Z">
 <meta property="article:author" content="dead-tree(黑色的小火苗)">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616195202047_14984.png">
+<meta name="twitter:image" content="http://jia-shuaijie.github.io/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616195202047_14984.png">
   
   
   
@@ -287,7 +287,7 @@
     
       
       
-        <a href="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/" title="Mysql"
+        <a href="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" title="Mysql"
            class="list-group-item list-group-item-action
            active">
           <span class="category-post">Mysql</span>
@@ -636,7 +636,7 @@
 不同隔离级别的锁的情况(了解)
 隐式提交(了解)
 </code></pre>
-<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616195202047_14984.png" srcset="/img/loading.gif" lazyload class>
+<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616195202047_14984.png" srcset="/img/loading.gif" lazyload class>
 
 <h3 id="事务的语法"><a href="#事务的语法" class="headerlink" title="事务的语法"></a>事务的语法</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">start</span> <span class="hljs-keyword">transaction</span>;/ <span class="hljs-keyword">begin</span>;  [ 开启事务 ]<br><span class="hljs-keyword">commit</span>; 使得当前的修改确认  [ 提交 ]<br><span class="hljs-keyword">rollback</span>; 使得当前的修改被放弃 [ 回滚 ]<br><span class="hljs-comment">-- 注意事务 必须要在InnoDB类型的Mysql数据库中</span><br></code></pre></td></tr></table></figure>
 
@@ -658,23 +658,23 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">同⼀条命令返回不同的结果集(更新).<br>事务 <span class="hljs-selector-tag">A</span> 多次读取同一数据,事务 <span class="hljs-selector-tag">B</span> 在事务<span class="hljs-selector-tag">A</span> 多次读取的过程中,对数据做了更新并提交,导致事务<span class="hljs-selector-tag">A</span>多次读取同一数据时,结果不一致。<br></code></pre></td></tr></table></figure>
 <p>幻读</p>
 <figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">重复查询的过程中,数据就发⽣了量的变化(<span class="hljs-keyword">insert</span>, <span class="hljs-keyword">delete</span>)。<br></code></pre></td></tr></table></figure>
-<h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616200525923_11634.png" srcset="/img/loading.gif" lazyload class>
+<h3 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h3><img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616200525923_11634.png" srcset="/img/loading.gif" lazyload class>
 
 <p>读未提交(READ_UNCOMMITTED)</p>
 <figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs llvm">读未提交<span class="hljs-punctuation">,</span>该隔离级别允许脏读取<span class="hljs-punctuation">,</span>其隔离级别是最低的。<br><br>换句话说<span class="hljs-punctuation">,</span>如果一个事务正在处理理某一数据<span class="hljs-punctuation">,</span>并对其进⾏了更新<span class="hljs-punctuation">,</span>但同时尚未完成事务<span class="hljs-punctuation">,</span>因此还没有提交事务<span class="hljs-comment">;而以此同时,允许另一个事务也能够访问该数据。</span><br></code></pre></td></tr></table></figure>
 <p>脏读示例：</p>
-<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616202751287_13367.png" srcset="/img/loading.gif" lazyload class>
+<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616202751287_13367.png" srcset="/img/loading.gif" lazyload class>
 
 <p>读已提交(READ_COMMITTED)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">读已提交是不同的事务执行的时候只能获取到已经提交的数据。 这样就不会出现上面的脏读的情况了。<br>但是在同一个事务中执行同一个读取,结果不一致<br></code></pre></td></tr></table></figure>
 <p>不可重复读示例: </p>
 <p>可是解决了脏读问题,但是还是解决不了可重复读问题。</p>
-<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616202806434_6417.png" srcset="/img/loading.gif" lazyload class>
+<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616202806434_6417.png" srcset="/img/loading.gif" lazyload class>
 
 
 <p>可重复读(REPEATABLE_READ)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs">可重复读就是保证在事务处理理过程中,多次读取同一个数据时,该数据的值和事务开始时刻是一致的。<br>因此该事务级别限制了不可重复读和脏读,但是有可能出现幻读的数据。<br><br>幻读就是指同样的事务操作,在前后两个时间段内执行对同一个数据项的读取,可能出现不一致的结果的诡异的更新事件<br></code></pre></td></tr></table></figure>
-<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/20210616202821876_30708.png" srcset="/img/loading.gif" lazyload class>
+<img src="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/20210616202821876_30708.png" srcset="/img/loading.gif" lazyload class>
 
 <p>顺序读(SERIALIZABLE)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">顺序读是最严格的事务隔离级别。它要求所有的事务排队顺序执⾏行行,即事务只能一个接一个地处理,不能并发。<br></code></pre></td></tr></table></figure>
@@ -726,7 +726,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Mysql</div>
-      <div>http://jia-shuaijie.github.io/2022/10/03/数据库/Mysql/mysql/</div>
+      <div>http://jia-shuaijie.github.io/2022/10/03/数据库/mysql/</div>
     </div>
     <div class="license-meta">
       
