@@ -18,19 +18,29 @@
   
     <meta name="description" content="本地安装 Mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql">
-<meta property="og:url" content="http://dead-tree.gitee.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/index.html">
+<meta property="og:title" content="本地安装 mysql">
+<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/index.html">
 <meta property="og:site_name" content="黑色的小火苗">
 <meta property="og:description" content="本地安装 Mysql">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_download.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysq_archives.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_archives_img.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_is_zip.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_path1.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_path2.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_path3.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_install.png">
+<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/setting_ini.png">
 <meta property="article:published_time" content="2022-10-03T11:32:35.000Z">
-<meta property="article:modified_time" content="2022-10-03T11:36:56.710Z">
+<meta property="article:modified_time" content="2022-10-03T12:30:43.312Z">
 <meta property="article:author" content="dead-tree(黑色的小火苗)">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_download.png">
   
   
   
-  <title>mysql - 黑色的小火苗</title>
+  <title>本地安装 mysql - 黑色的小火苗</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -68,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"dead-tree.gitee.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"jia-shuaijie.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -183,7 +193,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="mysql"></span>
+            <span id="subtitle" data-typed-text="本地安装 mysql"></span>
           
         </div>
 
@@ -206,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          44 字
+          1.2k 字
         
       </span>
     
@@ -217,7 +227,7 @@
         
         
         
-          1 分钟
+          11 分钟
         
       </span>
     
@@ -281,10 +291,10 @@
     
       
       
-        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/" title="mysql"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/" title="本地安装 mysql"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">mysql</span>
+          <span class="category-post">本地安装 mysql</span>
         </a>
       
     
@@ -307,12 +317,53 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">mysql</h1>
+            <h1 style="display: none">本地安装 mysql</h1>
             
             
               <div class="markdown-body">
                 
-                <p>首先需要从官网下载一个你所需要的的 <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads">Mysql</a> 版本<br>官网找到下载页面后可以按下图操作进行下载 </p>
+                <h2 id="下载-mysql"><a href="#下载-mysql" class="headerlink" title="下载 mysql"></a>下载 mysql</h2><p>首先需要从官网下载一个你所需要的的 <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads">Mysql</a> 版本<br>官网找到下载页面后可以按下图操作进行下载 </p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_download.png" srcset="/img/loading.gif" lazyload class>
+<p>点击 <code>MySQL Community Server</code> 进入源码包下载地址,如下图</p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysq_archives.png" srcset="/img/loading.gif" lazyload class>
+
+<p>选择你所需要的版本进行下载</p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_archives_img.png" srcset="/img/loading.gif" lazyload class>
+
+<h2 id="mysql-源码安装"><a href="#mysql-源码安装" class="headerlink" title="mysql 源码安装"></a>mysql 源码安装</h2><p>将下载好的压缩包解压到一个位置</p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_is_zip.png" srcset="/img/loading.gif" lazyload class>
+
+<p>配置相关的环境变量</p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_path1.png" srcset="/img/loading.gif" lazyload class>
+
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_path2.png" srcset="/img/loading.gif" lazyload class>
+<p>将 mysql 解压下的bin添加到path 中例如我的: <code>D:\Databases\SqlDatabase\mysql-5.7.9-winx64\bin</code></p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_path3.png" srcset="/img/loading.gif" lazyload class>
+
+<p>在mysql根目录下创建一个 my.ini 文件添加以下内容</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[mysql]</span><br><span class="hljs-comment"># 设置mysql客户端默认字符集</span><br><span class="hljs-attr">default-character-set</span>=utf8<br><span class="hljs-section">[mysqld]</span><br><span class="hljs-comment">#设置3306端口</span><br><span class="hljs-attr">port</span>=<span class="hljs-number">3306</span><br><span class="hljs-comment"># 设置mysql的安装目录 这里就是 mysql 解压后的根目录</span><br><span class="hljs-attr">basedir</span>=D:\Databases\SqlDatabase\mysql-<span class="hljs-number">5.7</span>.<span class="hljs-number">9</span>-winx64<br><span class="hljs-comment"># 设置mysql数据库的数据的存放目录</span><br><span class="hljs-attr">datadir</span>=D:\Databases\SqlDatabase\mysql-<span class="hljs-number">5.7</span>.<span class="hljs-number">9</span>-winx64\data<br><span class="hljs-comment"># 允许最大连接数</span><br><span class="hljs-attr">max_connections</span>=<span class="hljs-number">200</span><br><span class="hljs-comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="hljs-attr">character-set-server</span>=utf8<br><span class="hljs-comment"># 创建新表时将使用的默认存储引擎</span><br><span class="hljs-attr">default-storage-engine</span>=INNODB<br></code></pre></td></tr></table></figure>
+
+<p>ini文件创建并写好后,使用管理员cmd,跳转到 <code>mysql</code> 的bin目录运行以下三个命令</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs powershell">mysqld <span class="hljs-literal">--initialize</span> <span class="hljs-literal">--console</span><br>mysqld <span class="hljs-literal">--install</span><br>net <span class="hljs-built_in">start</span> mysql<br></code></pre></td></tr></table></figure>
+<p>三个命令运行示例图</p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/mysql_install.png" srcset="/img/loading.gif" lazyload class>
+
+<p>初始密码就是上图中框选住的位置,示例图中的初始密码就是 <code>a&amp;dak/Tn!1lu</code>.</p>
+<p>使用该密码进入 <code>mysql</code> 后使用下面两个命令更改登录密码</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;想要设置的密码&#x27;</span>;<br><span class="hljs-keyword">alter</span> <span class="hljs-keyword">user</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;localhost&#x27;</span> identified <span class="hljs-keyword">with</span> mysql_native_password <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;新密码&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>更改完密码后,使用 <code>status</code> 命令查看 <code>my.ini</code> 的设置是否成功.</p>
+<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/setting_ini.png" srcset="/img/loading.gif" lazyload class>
+
+<h2 id="测试是否安装成功"><a href="#测试是否安装成功" class="headerlink" title="测试是否安装成功"></a>测试是否安装成功</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">mysql <span class="hljs-literal">--version</span><br></code></pre></td></tr></table></figure>
+<p>那么接下来我们输入下面命令来看看能否连接到 mysql</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># win 需打开 cmd/powershell 命令窗口</span><br><span class="hljs-comment"># -h ip 这里的ip 是远程 mysql 的 ip地址 [ -h 链接本地时无需使用该参数 ]</span><br><span class="hljs-comment"># -u user 是你要以什么用户登入 mysql</span><br>mysql <span class="hljs-literal">-h</span> ip <span class="hljs-literal">-u</span> user <span class="hljs-literal">-p</span><br></code></pre></td></tr></table></figure>
+<p>如果没有</p>
+<h2 id="源码安装后卸载步骤"><a href="#源码安装后卸载步骤" class="headerlink" title="源码安装后卸载步骤"></a>源码安装后卸载步骤</h2><ol>
+<li>停止 mysql 服务命令为<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">network stop mysql<br></code></pre></td></tr></table></figure></li>
+<li>删除 mysql 服务<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">sc</span> delete mysql<br></code></pre></td></tr></table></figure></li>
+<li>删除源码安装的文件夹</li>
+</ol>
 
                 
               </div>
@@ -351,8 +402,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>mysql</div>
-      <div>http://dead-tree.gitee.io/2022/10/03/软件安装/Mysql/mysql/</div>
+      <div>本地安装 mysql</div>
+      <div>http://jia-shuaijie.github.io/2022/10/03/软件安装/Mysql/mysql/</div>
     </div>
     <div class="license-meta">
       
@@ -400,7 +451,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" title="Mysql">
+                      <a href="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/mysql/" title="Mysql">
                         <span class="hidden-mobile">Mysql</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
