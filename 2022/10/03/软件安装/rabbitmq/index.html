@@ -16,21 +16,21 @@
   <meta name="author" content="dead-tree(黑色的小火苗)">
   <meta name="keywords" content="">
   
-    <meta name="description" content="docker内安装软件">
+    <meta name="description" content="centos安装Rabbitmq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker内安装软件">
-<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/index.html">
+<meta property="og:title" content="centos安装Rabbitmq">
+<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/index.html">
 <meta property="og:site_name" content="黑色的小火苗">
-<meta property="og:description" content="docker内安装软件">
+<meta property="og:description" content="centos安装Rabbitmq">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-04T07:04:07.522Z">
-<meta property="article:modified_time" content="2022-10-04T07:49:49.362Z">
+<meta property="article:published_time" content="2022-10-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-23T02:57:23.479Z">
 <meta property="article:author" content="dead-tree(黑色的小火苗)">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>docker内安装软件 - 黑色的小火苗</title>
+  <title>centos安装Rabbitmq - 黑色的小火苗</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -187,7 +187,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="docker内安装软件"></span>
+            <span id="subtitle" data-typed-text="centos安装Rabbitmq"></span>
           
         </div>
 
@@ -198,8 +198,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-04 15:04" pubdate>
-          2022年10月4日 下午
+        <time datetime="2022-10-03 00:00" pubdate>
+          2022年10月3日 凌晨
         </time>
       </span>
     
@@ -210,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          857 字
         
       </span>
     
@@ -221,7 +221,7 @@
         
         
         
-          16 分钟
+          8 分钟
         
       </span>
     
@@ -285,7 +285,7 @@
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/" title="centos7安装docker"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/" title="centos7安装docker"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">centos7安装docker</span>
@@ -294,16 +294,16 @@
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/" title="centos安装Rabbitmq"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/" title="centos安装Rabbitmq"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">centos安装Rabbitmq</span>
         </a>
       
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/nginx/" title="centos安装nginx"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/nginx/" title="centos安装nginx"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">centos安装nginx</span>
@@ -312,9 +312,9 @@
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">docker内安装软件</span>
         </a>
       
@@ -356,24 +356,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">docker内安装软件</h1>
+            <h1 style="display: none">centos安装Rabbitmq</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="安装-elasticsearch"><a href="#安装-elasticsearch" class="headerlink" title="安装 elasticsearch"></a>安装 elasticsearch</h2><ol>
-<li>拉取镜像<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull elasticsearch:5.6.8<br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 es 容器</span><br>docker run -di --name=black_fire_es -p 9200:9200 -p 9300:9300 elasticsearch:5.6.8<br></code></pre></td></tr></table></figure></li>
-<li>配置开启远程链接<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">登录容器</span><br>docker exec -it black_fire_es /bin/bash<br><span class="hljs-meta prompt_"># </span><span class="language-bash">下载 vim</span><br>apt-get update<br>apt-get install vim<br><span class="hljs-meta prompt_"># </span><span class="language-bash">进入 config 目录</span><br>cd config<br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改配置文件</span><br>vim elasticsearch.yml<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将内容修改为以下内容</span><br>http.host: 0.0.0.0<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Uncomment the following lines <span class="hljs-keyword">for</span> a production cluster deployment</span><br>transport.host: 0.0.0.0<br>cluster.name: my-elasticsearch<br><span class="hljs-meta prompt_">#</span><span class="language-bash">discovery.zen.minimum_master_nodes: 2</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">此步为允许elasticsearch跨域访问,默认是<span class="hljs-literal">false</span></span><br>http.cors.enabled: true<br><span class="hljs-meta prompt_"># </span><span class="language-bash">表⽰跨域访问允许的域名地址(表⽰任意)</span><br>http.cors.allow-origin: &quot;*&quot;<br>network.host: 192.168.65.128<br></code></pre></td></tr></table></figure></li>
-<li>因为 es 消耗较大需要调整一些配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">系统参数配置</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改 limits.conf</span><br>vim /etc/security/limits.conf<br><span class="hljs-meta prompt_"># </span><span class="language-bash">在 limits.conf 最末尾添加以下内容</span><br>* soft nofile 65536<br>* hard nofile 65536<br><span class="hljs-meta prompt_"># </span><span class="language-bash">---------- 分割线 ----------</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改 sysctl.conf</span><br>vi /etc/sysctl.conf<br><span class="hljs-meta prompt_"># </span><span class="language-bash">在最末尾添加以下内容</span><br>vm.max_map_count=655360<br><span class="hljs-meta prompt_"># </span><span class="language-bash">---------- 分割线 ----------</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">执行下面命令使修改内容立即生效</span><br>sysctl -p<br></code></pre></td></tr></table></figure></li>
+                <p>可以在<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/">RabbitMQ官网</a>下载也可以使用我下载好放在蓝奏云中的<a target="_blank" rel="noopener" href="https://wwm.lanzoub.com/b02770z0h">RabbitMQ</a> 密码是: 0000</p>
+<ol>
+<li>安装依赖环境<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install build-essential openssl openssl-devel unixODBC unixODBC-devel <br>make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz<br></code></pre></td></tr></table></figure></li>
+<li><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">进入上传的地址 运行下面命令 安装 erlang</span><br>rpm -ivh erlang-18.3-1.el7.centos.x86_64.rpm<br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果 gblic 版本低于2.15 需要使用下面命令进行升级</span><br>sudo yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make -y<br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 socat</span> <br>sudo rpm -Uvh socat-1.7.3.2-1.1.el7.x86_64.rpm --force --nodeps<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 rabbitmq</span><br>rpm -ivh rabbitmq-server-3.6.5-1.noarch.rpm<br></code></pre></td></tr></table></figure></li>
+<li>开启配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">开启管理界⾯</span><br>rabbitmq-plugins enable rabbitmq_management<br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改默认配置信息</span><br>vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app<br><span class="hljs-meta prompt_"># </span><span class="language-bash">⽐如修改密码、配置等等,例如：loopback_users 中的 &lt;&lt;<span class="hljs-string">&quot;guest&quot;</span>&gt;&gt;,只保留guest</span><br></code></pre></td></tr></table></figure></li>
+<li>启动<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">service rabbitmq-server start # 启动服务<br>service rabbitmq-server stop # 停⽌服务<br>service rabbitmq-server restart # 重启服务<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="ElasticSearch-安装-IK-分词器"><a href="#ElasticSearch-安装-IK-分词器" class="headerlink" title="ElasticSearch 安装 IK 分词器"></a>ElasticSearch 安装 IK 分词器</h3><p><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases">IK分词器</a>和ElasticSearch版本必须一致否则容器闪退,下载后上传到 centos7 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">解压压缩包</span><br>tar -zxvf elasticsearch-analysis-ik-5.6.8.tar.g<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将ik⽬录拷贝到docker容器的plugins⽬录下</span><br>docker cp ./ik black_fire_es:/usr/share/elasticsearch/plugins/<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重启 elasticSearch</span><br>docker restart black_fire_es<br></code></pre></td></tr></table></figure>
+<!-- 4. 设置配置文件
+```shell
+cd /usr/share/doc/rabbitmq-server-3.6.5/
+cp rabbitmq.config.example /etc/rabbitmq/rabbitmq.config
+``` -->
 
-<h2 id="docker-安装-kibana"><a href="#docker-安装-kibana" class="headerlink" title="docker 安装 kibana"></a>docker 安装 kibana</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">拉取 kibana 镜像</span><br>docker pull docker.io/kibana:5.6.8<br><span class="hljs-meta prompt_"># </span><span class="language-bash">创建并启动 kibana</span><br>docker run -it -d -e ELASTICSEARCH_URL=centos:9200 --name=kibana -p 5601:5601 kibana:5.6.8<br><span class="hljs-meta prompt_"># </span><span class="language-bash">解释</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">ELASTICSEARCH_URL=http://centos:9200：是指链接的ES ip地址</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="docker-安装fastdfs"><a href="#docker-安装fastdfs" class="headerlink" title="docker 安装fastdfs"></a>docker 安装fastdfs</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">拉取镜像命令</span><br>docker pull morunchang/fastdfs<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行 tracker</span><br>ocker run -d --name tracker --net=host morunchang/fastdfs sh tracker.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行 storage</span><br>docker run -d --name storage --net=host -e TRACKER_IP=&lt;your tracker server address&gt;:22122 -e GROUP_NAME=&lt;group name&gt; morunchang/fastdfs sh storage.sh <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">storage 示例</span><br>docker run -d --name storge --net=host -e TRACKER_IP=192.168.243.132:22122 -e GROUP_NAME=group1 morunchang/fastdfs sh storage.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用的网络模式是 -net=host, host模式可以不用映射容器端口宿主机</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">&lt;your tracker server address&gt; 是 宿主机的ip地址</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">&lt;group name&gt; 是组名 也就是 storage 的组</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果想要增加新的 storage 服务器,在此运行该命令 注意更改组名</span><br></code></pre></td></tr></table></figure>
 
 
+
+
+<p>访问 web 页面是: <code>http://ip:15672</code><br>我们配置的默认使用的用户是 <code>guest</code> ,登录时用户和密码都是 <code>guest</code>.</p>
 
                 
               </div>
@@ -412,8 +417,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>docker内安装软件</div>
-      <div>http://jia-shuaijie.github.io/2022/10/04/软件安装/docker内安装软件/</div>
+      <div>centos安装Rabbitmq</div>
+      <div>http://jia-shuaijie.github.io/2022/10/03/软件安装/rabbitmq/</div>
     </div>
     <div class="license-meta">
       
@@ -425,7 +430,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月4日</div>
+          <div>2022年10月3日</div>
         </div>
       
       
@@ -457,21 +462,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/" title="centos安装Rabbitmq">
+                      <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">centos安装Rabbitmq</span>
+                        <span class="hidden-mobile">docker内安装软件</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/" title="centos7安装docker">
-                        <span class="hidden-mobile">centos7安装docker</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>

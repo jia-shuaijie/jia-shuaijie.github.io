@@ -16,27 +16,21 @@
   <meta name="author" content="dead-tree(黑色的小火苗)">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本地安装 redis">
+    <meta name="description" content="docker内安装软件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="本地安装 redis">
-<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/index.html">
+<meta property="og:title" content="docker内安装软件">
+<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/index.html">
 <meta property="og:site_name" content="黑色的小火苗">
-<meta property="og:description" content="本地安装 redis">
+<meta property="og:description" content="docker内安装软件">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_daeonize.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_log.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_port.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_ssh.png">
-<meta property="og:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_run.png">
-<meta property="article:published_time" content="2022-10-03T11:32:35.000Z">
-<meta property="article:modified_time" content="2022-10-04T06:34:50.124Z">
+<meta property="article:published_time" content="2022-10-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-23T02:57:18.550Z">
 <meta property="article:author" content="dead-tree(黑色的小火苗)">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_daeonize.png">
   
   
   
-  <title>本地安装 redis - 黑色的小火苗</title>
+  <title>docker内安装软件 - 黑色的小火苗</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,7 +187,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="本地安装 redis"></span>
+            <span id="subtitle" data-typed-text="docker内安装软件"></span>
           
         </div>
 
@@ -204,8 +198,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-03 19:32" pubdate>
-          2022年10月3日 晚上
+        <time datetime="2022-10-03 00:00" pubdate>
+          2022年10月3日 凌晨
         </time>
       </span>
     
@@ -216,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.9k 字
         
       </span>
     
@@ -227,7 +221,7 @@
         
         
         
-          14 分钟
+          16 分钟
         
       </span>
     
@@ -320,7 +314,7 @@
       
         <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">docker内安装软件</span>
         </a>
       
@@ -338,7 +332,7 @@
       
         <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/" title="本地安装 redis"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">本地安装 redis</span>
         </a>
       
@@ -362,46 +356,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">本地安装 redis</h1>
+            <h1 style="display: none">docker内安装软件</h1>
             
             
               <div class="markdown-body">
                 
-                <p>首先我们需要下载我们需要的 <a target="_blank" rel="noopener" href="https://download.redis.io/releases/">redis 版本</a></p>
-<h2 id="Centos-安装-redis"><a href="#Centos-安装-redis" class="headerlink" title="Centos 安装 redis"></a>Centos 安装 redis</h2><p>我这里安装的是 <code>redis-6.2.6</code> 版本,如果安装的和我是一个版本可用直接使用 <code>https://download.redis.io/releases/redis-6.2.6.tar.gz</code> 这个地址下载.<br>如果在 windos 上载该压缩包的话,需要上传到 contes 上.</p>
-<h3 id="GCC-编译器安装"><a href="#GCC-编译器安装" class="headerlink" title="GCC 编译器安装"></a>GCC 编译器安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">避免遇到: /bin/sh: cc: 未找到命令 错误</span><br>yum -y install gcc automake autoconf libtool make<br></code></pre></td></tr></table></figure>
-
-<p>解压 <code>redis-6.2.6</code> 的压缩包</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">-C 这个参数是将解压包解压到指定位置</span><br>tar -zxvf redis-6.2.6.tar.gz -C /root/app<br><span class="hljs-meta prompt_"># </span><span class="language-bash">解压好后进入 redis 的根目录,我的解压好后的地址为: /root/app/redis-6.2.6</span> <br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行下面两行命令 注: 一定要是 redis 根目录</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">没有 gcc 编译器一定要先安装 gcc 编译器不然会遇到 /bin/sh: cc: 未找到命令 错误</span><br>make<br>make install<br></code></pre></td></tr></table></figure>
-
-<h3 id="配置-redis"><a href="#配置-redis" class="headerlink" title="配置 redis"></a>配置 redis</h3><p>本次配置是参照redis官网进行的配置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建一个目录来存储您的 Redis 配置文件和数据</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果用的 root 用户可以不用加 sudo</span><br>sudo mkdir /etc/redis<br>sudo mkdir /var/redis<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将 Redis 发行版中 utils 目录下的 init 脚本复制到 /etc/init.d 中。</span><br>sudo cp utils/redis_init_script /etc/init.d/redis_6379<br><span class="hljs-meta prompt_"># </span><span class="language-bash">编辑初始化脚本  请确保根据您正在使用的端口相应地修改 REDISPORT. pid 文件路径和配置文件名都取决于端口号。</span><br>sudo vi /etc/init.d/redis_6379<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将 Redis 发行版根目录中的模板配置文件复制到 /etc/redis/ 中,使用端口号作为名称,例如：</span><br>sudo cp redis.conf /etc/redis/6379.conf<br><span class="hljs-meta prompt_"># </span><span class="language-bash">在 /var/redis 中创建一个目录,该目录将用作此 Redis 实例的数据和工作目录：</span><br>sudo mkdir /var/redis/6379<br></code></pre></td></tr></table></figure>
-
-<p>编辑配置文件 <code>vim /etc/redis/6379.conf</code></p>
-<ol>
-<li><p>修改守护程序为 yes</p>
-<p> 使用 :&#x2F;daemonize 命令查找到 daemonize 将后面的 no 修改为 yes</p>
- <img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_daeonize.png" srcset="/img/loading.gif" lazyload class></li>
-<li><p>将日志文件设置为 &#x2F;var&#x2F;log&#x2F;redis_6379.log</p>
-<p> 使用 :&#x2F;logfile 命令查找到 logfile 在后面的 “” 中添加 &#x2F;var&#x2F;log&#x2F;redis_6379.log</p>
- <img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_log.png" srcset="/img/loading.gif" lazyload class></li>
-<li><p>将目录设置为 &#x2F;var&#x2F;redis&#x2F;6379 [ 必须否则配置应该会不生效 ]</p>
-<p> 使用 :&#x2F;dir 命令查找到 dir 将后面的 .&#x2F; 修改为 &#x2F;var&#x2F;redis&#x2F;6379</p>
- <img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_port.png" srcset="/img/loading.gif" lazyload class></li>
-<li><p>设置远程链接</p>
-<p> 使用 :&#x2F;bind 找到 bind 后面的 修改为 *</p>
- <img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_ssh.png" srcset="/img/loading.gif" lazyload class></li>
+                <h2 id="安装-elasticsearch"><a href="#安装-elasticsearch" class="headerlink" title="安装 elasticsearch"></a>安装 elasticsearch</h2><ol>
+<li>拉取镜像<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull elasticsearch:5.6.8<br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 es 容器</span><br>docker run -di --name=black_fire_es -p 9200:9200 -p 9300:9300 elasticsearch:5.6.8<br></code></pre></td></tr></table></figure></li>
+<li>配置开启远程链接<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">登录容器</span><br>docker exec -it black_fire_es /bin/bash<br><span class="hljs-meta prompt_"># </span><span class="language-bash">下载 vim</span><br>apt-get update<br>apt-get install vim<br><span class="hljs-meta prompt_"># </span><span class="language-bash">进入 config 目录</span><br>cd config<br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改配置文件</span><br>vim elasticsearch.yml<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将内容修改为以下内容</span><br>http.host: 0.0.0.0<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">Uncomment the following lines <span class="hljs-keyword">for</span> a production cluster deployment</span><br>transport.host: 0.0.0.0<br>cluster.name: my-elasticsearch<br><span class="hljs-meta prompt_">#</span><span class="language-bash">discovery.zen.minimum_master_nodes: 2</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">此步为允许elasticsearch跨域访问,默认是<span class="hljs-literal">false</span></span><br>http.cors.enabled: true<br><span class="hljs-meta prompt_"># </span><span class="language-bash">表⽰跨域访问允许的域名地址(表⽰任意)</span><br>http.cors.allow-origin: &quot;*&quot;<br>network.host: 192.168.65.128<br></code></pre></td></tr></table></figure></li>
+<li>因为 es 消耗较大需要调整一些配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">系统参数配置</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改 limits.conf</span><br>vim /etc/security/limits.conf<br><span class="hljs-meta prompt_"># </span><span class="language-bash">在 limits.conf 最末尾添加以下内容</span><br>* soft nofile 65536<br>* hard nofile 65536<br><span class="hljs-meta prompt_"># </span><span class="language-bash">---------- 分割线 ----------</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改 sysctl.conf</span><br>vi /etc/sysctl.conf<br><span class="hljs-meta prompt_"># </span><span class="language-bash">在最末尾添加以下内容</span><br>vm.max_map_count=655360<br><span class="hljs-meta prompt_"># </span><span class="language-bash">---------- 分割线 ----------</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">执行下面命令使修改内容立即生效</span><br>sysctl -p<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="运行-redis"><a href="#运行-redis" class="headerlink" title="运行 redis"></a>运行 redis</h3><p>运行命令: <code>sudo /etc/init.d/redis_6379 start</code></p>
-<p>运行完成后可以使用 <code>ps -ef | grep -i red redis</code> 是否正常运行.</p>
-<img src="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Redis/redis/redis_run.png" srcset="/img/loading.gif" lazyload class>
+<h3 id="ElasticSearch-安装-IK-分词器"><a href="#ElasticSearch-安装-IK-分词器" class="headerlink" title="ElasticSearch 安装 IK 分词器"></a>ElasticSearch 安装 IK 分词器</h3><p><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases">IK分词器</a>和ElasticSearch版本必须一致否则容器闪退,下载后上传到 centos7 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">解压压缩包</span><br>tar -zxvf elasticsearch-analysis-ik-5.6.8.tar.g<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将ik⽬录拷贝到docker容器的plugins⽬录下</span><br>docker cp ./ik black_fire_es:/usr/share/elasticsearch/plugins/<br><span class="hljs-meta prompt_"># </span><span class="language-bash">重启 elasticSearch</span><br>docker restart black_fire_es<br></code></pre></td></tr></table></figure>
 
-<p>设置开启自动当前服务</p>
-<p>ubutn: <code>sudo update-rc.d redis_6379 defaults</code></p>
-<p>centos: <code>systemctl enable redis_6379</code></p>
-<p>注: 这个 redis_6379 是 <code>/etc/init.d/redis_6379</code></p>
-<p>redis 按照当前安装好后目录</p>
-<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs arcade">启动脚本所在位置: <span class="hljs-regexp">/etc/i</span>nit.d/<br>模板配置文件所在位置: <span class="hljs-regexp">/etc/</span>redis/<br>Redis 实例的数据和工作目录: <span class="hljs-regexp">/var/</span>redis/<span class="hljs-number">6379</span><br>redis 日志文件所在地址: <span class="hljs-regexp">/var/</span>redis/<span class="hljs-number">6379</span><br></code></pre></td></tr></table></figure>
+<h2 id="docker-安装-kibana"><a href="#docker-安装-kibana" class="headerlink" title="docker 安装 kibana"></a>docker 安装 kibana</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">拉取 kibana 镜像</span><br>docker pull docker.io/kibana:5.6.8<br><span class="hljs-meta prompt_"># </span><span class="language-bash">创建并启动 kibana</span><br>docker run -it -d -e ELASTICSEARCH_URL=centos:9200 --name=kibana -p 5601:5601 kibana:5.6.8<br><span class="hljs-meta prompt_"># </span><span class="language-bash">解释</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">ELASTICSEARCH_URL=http://centos:9200：是指链接的ES ip地址</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="docker-安装fastdfs"><a href="#docker-安装fastdfs" class="headerlink" title="docker 安装fastdfs"></a>docker 安装fastdfs</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">拉取镜像命令</span><br>docker pull morunchang/fastdfs<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行 tracker</span><br>ocker run -d --name tracker --net=host morunchang/fastdfs sh tracker.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行 storage</span><br>docker run -d --name storage --net=host -e TRACKER_IP=&lt;your tracker server address&gt;:22122 -e GROUP_NAME=&lt;group name&gt; morunchang/fastdfs sh storage.sh <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">storage 示例</span><br>docker run -d --name storge --net=host -e TRACKER_IP=192.168.243.132:22122 -e GROUP_NAME=group1 morunchang/fastdfs sh storage.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">使用的网络模式是 -net=host, host模式可以不用映射容器端口宿主机</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">&lt;your tracker server address&gt; 是 宿主机的ip地址</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">&lt;group name&gt; 是组名 也就是 storage 的组</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果想要增加新的 storage 服务器,在此运行该命令 注意更改组名</span><br></code></pre></td></tr></table></figure>
+
+
+
                 
               </div>
             
@@ -439,8 +412,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>本地安装 redis</div>
-      <div>http://jia-shuaijie.github.io/2022/10/03/软件安装/Redis/redis/</div>
+      <div>docker内安装软件</div>
+      <div>http://jia-shuaijie.github.io/2022/10/03/软件安装/docker内安装软件/</div>
     </div>
     <div class="license-meta">
       
@@ -484,9 +457,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Mysql/mysql/" title="本地安装 mysql">
+                      <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/nginx/" title="centos安装nginx">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">本地安装 mysql</span>
+                        <span class="hidden-mobile">centos安装nginx</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -494,8 +467,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/" title="Mysql">
-                        <span class="hidden-mobile">Mysql</span>
+                      <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/" title="centos安装Rabbitmq">
+                        <span class="hidden-mobile">centos安装Rabbitmq</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

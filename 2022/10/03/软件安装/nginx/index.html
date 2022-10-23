@@ -16,21 +16,21 @@
   <meta name="author" content="dead-tree(黑色的小火苗)">
   <meta name="keywords" content="">
   
-    <meta name="description" content="centos安装Rabbitmq">
+    <meta name="description" content="centos安装nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="centos安装Rabbitmq">
-<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/index.html">
+<meta property="og:title" content="centos安装nginx">
+<meta property="og:url" content="http://jia-shuaijie.github.io/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/nginx/index.html">
 <meta property="og:site_name" content="黑色的小火苗">
-<meta property="og:description" content="centos安装Rabbitmq">
+<meta property="og:description" content="centos安装nginx">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-04T07:11:34.932Z">
-<meta property="article:modified_time" content="2022-10-04T07:49:56.259Z">
+<meta property="article:published_time" content="2022-10-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-23T02:57:04.328Z">
 <meta property="article:author" content="dead-tree(黑色的小火苗)">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>centos安装Rabbitmq - 黑色的小火苗</title>
+  <title>centos安装nginx - 黑色的小火苗</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -187,7 +187,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="centos安装Rabbitmq"></span>
+            <span id="subtitle" data-typed-text="centos安装nginx"></span>
           
         </div>
 
@@ -198,8 +198,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-04 15:11" pubdate>
-          2022年10月4日 下午
+        <time datetime="2022-10-03 00:00" pubdate>
+          2022年10月3日 凌晨
         </time>
       </span>
     
@@ -210,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          857 字
+          1.1k 字
         
       </span>
     
@@ -221,7 +221,7 @@
         
         
         
-          8 分钟
+          10 分钟
         
       </span>
     
@@ -285,7 +285,7 @@
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/" title="centos7安装docker"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/" title="centos7安装docker"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">centos7安装docker</span>
@@ -294,25 +294,25 @@
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/" title="centos安装Rabbitmq"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/rabbitmq/" title="centos安装Rabbitmq"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">centos安装Rabbitmq</span>
         </a>
       
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/nginx/" title="centos安装nginx"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/nginx/" title="centos安装nginx"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">centos安装nginx</span>
         </a>
       
     
       
       
-        <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件"
+        <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">docker内安装软件</span>
@@ -356,29 +356,35 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">centos安装Rabbitmq</h1>
+            <h1 style="display: none">centos安装nginx</h1>
             
             
               <div class="markdown-body">
                 
-                <p>可以在<a target="_blank" rel="noopener" href="https://www.rabbitmq.com/">RabbitMQ官网</a>下载也可以使用我下载好放在蓝奏云中的<a target="_blank" rel="noopener" href="https://wwm.lanzoub.com/b02770z0h">RabbitMQ</a> 密码是: 0000</p>
+                <h2 id="centos-安装-Nginx"><a href="#centos-安装-Nginx" class="headerlink" title="centos 安装 Nginx"></a>centos 安装 Nginx</h2><p>去 <a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">nginx官方下载页面 </a> 或者使用我在蓝奏云中的 <a target="_blank" rel="noopener" href="https://wwm.lanzoub.com/b02770yri">nginx</a> 密码: 0000</p>
+<p>我们下载好后需要按照顺序进行安装一些依赖</p>
 <ol>
-<li>安装依赖环境<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum install build-essential openssl openssl-devel unixODBC unixODBC-devel <br>make gcc gcc-c++ kernel-devel m4 ncurses-devel tk tc xz<br></code></pre></td></tr></table></figure></li>
-<li><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">进入上传的地址 运行下面命令 安装 erlang</span><br>rpm -ivh erlang-18.3-1.el7.centos.x86_64.rpm<br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果 gblic 版本低于2.15 需要使用下面命令进行升级</span><br>sudo yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make -y<br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 socat</span> <br>sudo rpm -Uvh socat-1.7.3.2-1.1.el7.x86_64.rpm --force --nodeps<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 rabbitmq</span><br>rpm -ivh rabbitmq-server-3.6.5-1.noarch.rpm<br></code></pre></td></tr></table></figure></li>
-<li>开启配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">开启管理界⾯</span><br>rabbitmq-plugins enable rabbitmq_management<br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改默认配置信息</span><br>vim /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.5/ebin/rabbit.app<br><span class="hljs-meta prompt_"># </span><span class="language-bash">⽐如修改密码、配置等等,例如：loopback_users 中的 &lt;&lt;<span class="hljs-string">&quot;guest&quot;</span>&gt;&gt;,只保留guest</span><br></code></pre></td></tr></table></figure></li>
-<li>启动<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">service rabbitmq-server start # 启动服务<br>service rabbitmq-server stop # 停⽌服务<br>service rabbitmq-server restart # 重启服务<br></code></pre></td></tr></table></figure></li>
+<li><p>安装 gcc环境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 make</span><br>yum -y install gcc automake autoconf libtool make<br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装 gcc</span><br>yum install gcc gcc-c++<br></code></pre></td></tr></table></figure></li>
+<li><p>下载 <a target="_blank" rel="noopener" href="https://sourceforge.net/projects/pcre/files/pcre/">PCRE</a> 安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">解压 pcre</span><br>tar -zxvf pcre-8.45.tar.gz -C /root/app<br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行下面命令安装</span><br>./configure<br>make<br>make install<br></code></pre></td></tr></table></figure></li>
+<li><p>下载<a target="_blank" rel="noopener" href="http://www.zlib.net/fossils/">zlib库</a> 安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将下载好的 zlib上传到 Linux</span><br>tar -zxvf zlib-1.2.12.tar.gz -C /root/app<br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行以下命令安装 zlib</span><br>./configure<br>make<br>make install<br></code></pre></td></tr></table></figure></li>
+<li><p>下载<a target="_blank" rel="noopener" href="https://www.openssl.org/source/">ssl</a>安装(某些vps默认没装ssl)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">直接解压就可以</span><br>tar -zxvf openssl-1.0.1c.tar.gz -c /root/app<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装 nginx</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">下载好 nginx 的包上传到 Linux 上,解压至指定位置解压 nginx 包</span><br>tar -zxvf nginx-1.21.6.tar.gz -C /root/app/nginx<br><span class="hljs-meta prompt_"># </span><span class="language-bash">安装</span><br>./configure --sbin-path=/root/app/nginx-1.21.6 \<br>--conf-path=/root/app/nginx-1.21.6/nginx.conf \<br>--pid-path=/root/app/nginx-1.21.6/nginx.pid \<br>--with-http_ssl_module \<br>--with-pcre=/root/app/pcre-8.45 \<br>--with-zlib=/root/app/zlib-1.2.12 \<br>--with-openssl=/root/app/openssl-1.1.1n<br><br>make<br>make install<br><span class="hljs-meta prompt_"># </span><span class="language-bash">--with-pcre=/usr/src/pcre-8.34 指的是pcre-8.34 的源码路径。</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">--with-zlib=/usr/src/zlib-1.2.7 指的是zlib-1.2.7 的源码路径。</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看端口是否被占用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">netstat -ano|grep 80<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>运行 nginx</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">如果查不到结果后执行,有结果则忽略此步骤(ubuntu下必须用sudo启动,不然只能在前台运行)</span><br>sudo /root/app/nginx-1.21.6<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>停止 nginx</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs perl"><span class="hljs-comment"># 找到 nginx 服务</span><br>ps -ef|<span class="hljs-keyword">grep</span> nginx<br><span class="hljs-comment"># 直接杀死进程</span><br><span class="hljs-keyword">kill</span> -QUIT  进程id<br><br>netstat -tnulp | <span class="hljs-keyword">grep</span> nginx <span class="hljs-comment"># 参看端口是否关闭</span><br>systemctl status nginx  <span class="hljs-comment"># 查看服务是否关闭</span><br></code></pre></td></tr></table></figure></li>
 </ol>
-<!-- 4. 设置配置文件
-```shell
-cd /usr/share/doc/rabbitmq-server-3.6.5/
-cp rabbitmq.config.example /etc/rabbitmq/rabbitmq.config
-``` -->
-
-
-
-
-
-<p>访问 web 页面是: <code>http://ip:15672</code><br>我们配置的默认使用的用户是 <code>guest</code> ,登录时用户和密码都是 <code>guest</code>.</p>
 
                 
               </div>
@@ -417,8 +423,8 @@ cp rabbitmq.config.example /etc/rabbitmq/rabbitmq.config
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>centos安装Rabbitmq</div>
-      <div>http://jia-shuaijie.github.io/2022/10/04/软件安装/rabbitmq/</div>
+      <div>centos安装nginx</div>
+      <div>http://jia-shuaijie.github.io/2022/10/03/软件安装/nginx/</div>
     </div>
     <div class="license-meta">
       
@@ -430,7 +436,7 @@ cp rabbitmq.config.example /etc/rabbitmq/rabbitmq.config
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月4日</div>
+          <div>2022年10月3日</div>
         </div>
       
       
@@ -462,9 +468,9 @@ cp rabbitmq.config.example /etc/rabbitmq/rabbitmq.config
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/10/04/%E6%95%B0%E6%8D%AE%E5%BA%93/redis/" title="Redis">
+                      <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/" title="centos7安装docker">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Redis</span>
+                        <span class="hidden-mobile">centos7安装docker</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -472,7 +478,7 @@ cp rabbitmq.config.example /etc/rabbitmq/rabbitmq.config
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/10/04/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件">
+                      <a href="/2022/10/03/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker%E5%86%85%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/" title="docker内安装软件">
                         <span class="hidden-mobile">docker内安装软件</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
