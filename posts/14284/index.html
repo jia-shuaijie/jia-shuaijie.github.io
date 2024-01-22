@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>springSSM整合 | 黑色的小火苗</title>
+  <meta name="keywords" content=" spring , mybatis ">
+  <meta name="description" content="springSSM整合 | 黑色的小火苗">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="细雨潇潇欲晓天，半床花影伴书眠。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://jia-shuaijie.github.io/about/index.html">
+<meta property="og:site_name" content="黑色的小火苗">
+<meta property="og:description" content="细雨潇潇欲晓天，半床花影伴书眠。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-24T09:57:17.000Z">
+<meta property="article:modified_time" content="2024-01-07T03:37:19.156Z">
+<meta property="article:author" content="黑色的小火苗">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/images/idsyhx.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/zenbum.css?v=1.1.0" rel="stylesheet">
+
+<link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/animate.css/4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/highlight.js/9.16.2/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/nprogress/0.2.0/nprogress.min.css"></script>
+
+
+
+<script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="https://img.gsimg.top/2024/01/15/icapv8.jpg"/>
+</a>
+<div class="author">
+    <span>黑色的小火苗</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="email"
+               href="mailto:jsj1778016336@163.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(23)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="后端">
+            
+            后端
+            <small>(15)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="数据库">
+            
+            数据库
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="收集">
+            
+            收集
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="安装">
+            
+            安装
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="杂项">
+            
+            杂项
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>错误收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>后端</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网址收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CMD</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fastjson2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ftp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>httpclient</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mybatis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>POWERSHELL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>spring</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Win</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/16673/"
+           data-tag="错误收集"
+           data-author="" >
+            <span class="post-title" title="后端错误收集">后端错误收集</span>
+            <span class="post-date" title="2024-01-22 19:24:30">2024/01/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂项 "
+           href="/posts/56549/"
+           data-tag="Win"
+           data-author="" >
+            <span class="post-title" title="win美化终端">win美化终端</span>
+            <span class="post-date" title="2024-01-15 16:40:00">2024/01/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 收集 "
+           href="/posts/59936/"
+           data-tag="软件收集"
+           data-author="" >
+            <span class="post-title" title="软件资源收集">软件资源收集</span>
+            <span class="post-date" title="2024-01-15 10:14:00">2024/01/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂项 "
+           href="/posts/47197/"
+           data-tag="CMD,POWERSHELL"
+           data-author="" >
+            <span class="post-title" title="Win命令行">Win命令行</span>
+            <span class="post-date" title="2023-12-25 09:27:00">2023/12/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/48906/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="SpringBoot定时任务">SpringBoot定时任务</span>
+            <span class="post-date" title="2023-12-15 09:33:00">2023/12/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/52186/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="Mybatis自动注入数据">Mybatis自动注入数据</span>
+            <span class="post-date" title="2023-12-09 09:27:00">2023/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/22662/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="全局异常拦截器">全局异常拦截器</span>
+            <span class="post-date" title="2023-12-08 09:15:00">2023/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/19207/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="拦截注解注入数据">拦截注解注入数据</span>
+            <span class="post-date" title="2023-12-03 08:54:00">2023/12/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/16441/"
+           data-tag="ftp"
+           data-author="" >
+            <span class="post-title" title="ftp文件上传">ftp文件上传</span>
+            <span class="post-date" title="2023-11-03 11:10:00">2023/11/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/45461/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Rsa加密解密">Rsa加密解密</span>
+            <span class="post-date" title="2023-10-31 08:42:00">2023/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/4243/"
+           data-tag="java,fastjson2"
+           data-author="" >
+            <span class="post-title" title="fastjson2">fastjson2</span>
+            <span class="post-date" title="2023-10-17 15:20:00">2023/10/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/4636/"
+           data-tag="java,httpclient"
+           data-author="" >
+            <span class="post-title" title="HttpClient">HttpClient</span>
+            <span class="post-date" title="2023-10-17 15:20:00">2023/10/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/21497/"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="maven">maven</span>
+            <span class="post-date" title="2023-09-25 15:20:00">2023/09/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 数据库 "
+           href="/posts/14691/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="PostgreSql">PostgreSql</span>
+            <span class="post-date" title="2023-08-01 14:34:00">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/33141/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="poi-tl">poi-tl</span>
+            <span class="post-date" title="2023-05-28 15:03:00">2023/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/5518/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="EasyExcel">EasyExcel</span>
+            <span class="post-date" title="2023-05-28 15:02:00">2023/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/9964/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="spring">spring</span>
+            <span class="post-date" title="2023-03-02 19:16:32">2023/03/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 数据库 "
+           href="/posts/62688/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="Mysql">Mysql</span>
+            <span class="post-date" title="2023-03-01 19:04:16">2023/03/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/14284/"
+           data-tag="spring,mybatis"
+           data-author="" >
+            <span class="post-title" title="springSSM整合">springSSM整合</span>
+            <span class="post-date" title="2023-02-28 19:20:33">2023/02/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/62590/"
+           data-tag="数据库,后端,mybatis"
+           data-author="" >
+            <span class="post-title" title="mybatis">mybatis</span>
+            <span class="post-date" title="2023-02-26 14:57:00">2023/02/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 收集 "
+           href="/posts/49096/"
+           data-tag="网址收集"
+           data-author="" >
+            <span class="post-title" title="网址收集">网址收集</span>
+            <span class="post-date" title="2023-02-05 21:07:44">2023/02/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 安装 "
+           href="/posts/27888/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Centos7安装Emqx">Centos7安装Emqx</span>
+            <span class="post-date" title="2023-02-05 21:02:26">2023/02/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 安装 "
+           href="/posts/3720/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Centos7安装Mysql8">Centos7安装Mysql8</span>
+            <span class="post-date" title="2023-02-05 21:02:26">2023/02/05</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-后台开发/spring系列/springSSM整合" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">springSSM整合</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="后端">后端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">spring</a>
+            
+            <a class="color3">mybatis</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-01-22 19:24:30'>2023-02-28 19:20</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-%E6%95%B4%E5%90%88-mybatis-SSM"><span class="toc-text">Spring 整合 mybatis(SSM)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%AF%BC%E5%85%A5"><span class="toc-text">依赖导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-db-properties"><span class="toc-text">创建数据库连接配置文件 db.properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEspring"><span class="toc-text">配置spring</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-spring-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-application-xml"><span class="toc-text">创建 spring 的配置文件 application.xml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-mvc%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">创建 mvc的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-web-xml"><span class="toc-text">创建 web.xml</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-controller-%E6%B5%8B%E8%AF%95%E4%B8%8B%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-text">创建一个 controller 测试下是否成功</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-整合-mybatis-SSM"><a href="#Spring-整合-mybatis-SSM" class="headerlink" title="Spring 整合 mybatis(SSM)"></a>Spring 整合 mybatis(SSM)</h1><h2 id="依赖导入"><a href="#依赖导入" class="headerlink" title="依赖导入"></a>依赖导入</h2><pre><code class="xml">    &lt;!--  注意这个 packaging 标签必须存在,不然 tomcat 插件一启动就结束了  --&gt;
+    &lt;packaging&gt;war&lt;/packaging&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+        &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+        &lt;spring.version&gt;5.2.15.RELEASE&lt;/spring.version&gt;
+        &lt;servlet-api.version&gt;3.0.1&lt;/servlet-api.version&gt;
+        &lt;mysql.version&gt;8.0.28&lt;/mysql.version&gt;
+        &lt;druid.version&gt;1.2.3&lt;/druid.version&gt;
+        &lt;pagehelper.version&gt;5.1.10&lt;/pagehelper.version&gt;
+        &lt;log4j.version&gt;1.2.17&lt;/log4j.version&gt;
+        &lt;mybatis.version&gt;3.5.6&lt;/mybatis.version&gt;
+        &lt;mybatis.spring.version&gt;1.3.3&lt;/mybatis.spring.version&gt;
+        &lt;jackson.version&gt;2.9.6&lt;/jackson.version&gt;
+        &lt;lombok.version&gt;1.16.14&lt;/lombok.version&gt;
+        &lt;junit.version&gt;4.12&lt;/junit.version&gt;
+        &lt;lombok.version&gt;1.18.24&lt;/lombok.version&gt;
+    &lt;/properties&gt;
+
+
+    &lt;dependencies&gt;
+        &lt;!-- spring start --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;!-- tomcat7 插件依赖 和视图解析器也需要此依赖 --&gt;
+            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;servlet-api.version&#125;&lt;/version&gt;
+            &lt;scope&gt;provided&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;!-- 开启事务使用 --&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- spring end --&gt;
+        &lt;!-- Mybatis start --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;version&gt;8.0.28&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;!-- alibaba 的 druid --&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;druid&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;druid.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;!-- github 上的分页插件 --&gt;
+            &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;
+            &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;pagehelper.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;mybatis.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- mybatis-spring 与spring组合为 spring ssm 时需要引入,因为 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;mybatis.spring.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- Mybatis end --&gt;
+
+        &lt;dependency&gt;
+            &lt;!-- Jackson Json处理工具包 --&gt;
+            &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+            &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;jackson.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+
+
+        &lt;dependency&gt;
+            &lt;!-- lombok 依赖(减少get/set生成) --&gt;
+            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+            &lt;version&gt;$&#123;lombok.version&#125;&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+                &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;2.2&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;path&gt;/&lt;/path&gt;
+                    &lt;port&gt;80&lt;/port&gt;
+                    &lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+</code></pre>
+<h2 id="创建数据库连接配置文件-db-properties"><a href="#创建数据库连接配置文件-db-properties" class="headerlink" title="创建数据库连接配置文件 db.properties"></a>创建数据库连接配置文件 db.properties</h2><pre><code class="properties">database.driver=com.mysql.cj.jdbc.Driver
+database.url=jdbc:mysql://ip:3306/tableName?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=GMT
+database.username=mysqlUserName
+database.password=mysqlUserPwd
+</code></pre>
+<h2 id="配置spring"><a href="#配置spring" class="headerlink" title="配置spring"></a>配置spring</h2><p>mybatis.xml(如果不需要可以不创建) 除了 setting 用到 mybatis.xml 文件其他都交给 spring 来管理</p>
+<h3 id="创建-spring-的配置文件-application-xml"><a href="#创建-spring-的配置文件-application-xml" class="headerlink" title="创建 spring 的配置文件 application.xml"></a>创建 spring 的配置文件 application.xml</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+       xsi:schemaLocation=&quot;
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        &quot;&gt;
+    &lt;!-- 将这些包中添加注解之后对象的创建权限交给Spring容器--&gt;
+    &lt;context:component-scan base-package=&quot;org.sunset.cn.entity;org.sunset.cn.service;&quot; /&gt;
+
+    &lt;!-- 读取db 配置文件 --&gt;
+    &lt;context:property-placeholder location=&quot;classpath*:db.properties&quot;/&gt;
+    &lt;!--    配置数据库链接数据源--&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.alibaba.druid.pool.DruidDataSource&quot;&gt;
+        &lt;property name=&quot;driverClassName&quot; value=&quot;$&#123;database.driver&#125;&quot;/&gt;
+        &lt;property name=&quot;url&quot; value=&quot;$&#123;database.url&#125;&quot;/&gt;
+        &lt;property name=&quot;username&quot; value=&quot;$&#123;database.username&#125;&quot;/&gt;
+        &lt;property name=&quot;password&quot; value=&quot;$&#123;database.password&#125;&quot;/&gt;
+    &lt;/bean&gt;
+    &lt;!-- 配置 sqlSessionFactory Bean --&gt;
+    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+        &lt;!-- 如果有mybatis的单独配置文件,需要在此插入 --&gt;
+        &lt;property name=&quot;configLocation&quot; value=&quot;classpath:mybatis.xml&quot;/&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+
+        &lt;property name=&quot;plugins&quot;&gt;
+            &lt;array&gt;
+                &lt;!-- 分页 --&gt;
+                &lt;bean class=&quot;com.github.pagehelper.PageInterceptor&quot;&gt;
+                    &lt;property name=&quot;properties&quot;&gt;
+                        &lt;value&gt;
+                            reasonable = true
+                        &lt;/value&gt;
+                    &lt;/property&gt;
+                &lt;/bean&gt;
+            &lt;/array&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- 配置 mapper 扫描 --&gt;
+    &lt;bean id=&quot;mapperScannerConfigurer&quot;  class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+        &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;/&gt;
+        &lt;property name=&quot;basePackage&quot; value=&quot;org.sunset.cn.mapper&quot; /&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- 通过注解方式实现事务 --&gt;
+    &lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;
+    &lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot; /&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+<h3 id="创建-mvc的配置文件"><a href="#创建-mvc的配置文件" class="headerlink" title="创建 mvc的配置文件"></a>创建 mvc的配置文件</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+&quot;&gt;
+    &lt;!--springmvc的配置文件:控制器的bean对象都在这里扫描--&gt;
+    &lt;context:component-scan base-package=&quot;org.sunset.cn.controller&quot;/&gt;
+    &lt;mvc:annotation-driven/&gt;
+    &lt;!--视图解析器--&gt;
+    &lt;bean id=&quot;internalResourceViewResolver&quot;
+          class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/html/&quot;/&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.html&quot;/&gt;
+    &lt;/bean&gt;
+    &lt;!--静态资源处理--&gt;
+    &lt;mvc:resources mapping=&quot;/html/**&quot; location=&quot;/html/&quot;/&gt;
+&lt;/beans&gt;
+</code></pre>
+<h3 id="创建-web-xml"><a href="#创建-web-xml" class="headerlink" title="创建 web.xml"></a>创建 web.xml</h3><p>idea中需要创建 webapp&#x2F;WEB-INF&#x2F;web.xml 来使用. 也就是需要配置 web.</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;
+         version=&quot;4.0&quot;&gt;
+    &lt;!-- 监听器 监听 spring 配置文件  --&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath*:application.xml&lt;/param-value&gt;
+    &lt;/context-param&gt;
+    &lt;listener&gt;
+        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+    &lt;/listener&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;classpath*:springMvcApplication-local.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre>
+<h2 id="创建一个-controller-测试下是否成功"><a href="#创建一个-controller-测试下是否成功" class="headerlink" title="创建一个 controller 测试下是否成功"></a>创建一个 controller 测试下是否成功</h2><pre><code class="java">import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+@Controller
+@ResponseBody
+@RequestMapping(&quot;user&quot;)
+public class UserController &#123;
+
+    @GetMapping(value = &quot;&quot;)
+    public String queryAllOrById()) &#123;
+        return &quot;success&quot;;
+    &#125;
+&#125;
+</code></pre>
+<blockquote>
+<p>ps: 启动时使用 tomcat 插件启动,也可以去 idea 的启动配置里选择 mavan ,再在页面中配置运行命令为 <code>tomcat7:run</code>.</p>
+</blockquote>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 552px;
+    }
+    .nav.fullscreen {
+        margin-left: -552px;
+    }
+    .nav-left {
+        width: 130px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

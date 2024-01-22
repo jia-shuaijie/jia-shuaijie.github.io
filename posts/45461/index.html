@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rsa加密解密 | 黑色的小火苗</title>
+  <meta name="keywords" content=" java ">
+  <meta name="description" content="Rsa加密解密 | 黑色的小火苗">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="细雨潇潇欲晓天，半床花影伴书眠。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于">
+<meta property="og:url" content="https://jia-shuaijie.github.io/about/index.html">
+<meta property="og:site_name" content="黑色的小火苗">
+<meta property="og:description" content="细雨潇潇欲晓天，半床花影伴书眠。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-24T09:57:17.000Z">
+<meta property="article:modified_time" content="2024-01-07T03:37:19.156Z">
+<meta property="article:author" content="黑色的小火苗">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/images/idsyhx.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/zenbum.css?v=1.1.0" rel="stylesheet">
+
+<link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/animate.css/4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/highlight.js/9.16.2/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/nprogress/0.2.0/nprogress.min.css"></script>
+
+
+
+<script src="//lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="https://img.gsimg.top/2024/01/15/icapv8.jpg"/>
+</a>
+<div class="author">
+    <span>黑色的小火苗</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="email"
+               href="mailto:jsj1778016336@163.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(23)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="后端">
+            
+            后端
+            <small>(15)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="数据库">
+            
+            数据库
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="收集">
+            
+            收集
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="安装">
+            
+            安装
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="杂项">
+            
+            杂项
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>错误收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>后端</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网址收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CMD</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fastjson2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ftp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>httpclient</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mybatis</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>POWERSHELL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>spring</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Win</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/16673/"
+           data-tag="错误收集"
+           data-author="" >
+            <span class="post-title" title="后端错误收集">后端错误收集</span>
+            <span class="post-date" title="2024-01-22 19:24:30">2024/01/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂项 "
+           href="/posts/56549/"
+           data-tag="Win"
+           data-author="" >
+            <span class="post-title" title="win美化终端">win美化终端</span>
+            <span class="post-date" title="2024-01-15 16:40:00">2024/01/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 收集 "
+           href="/posts/59936/"
+           data-tag="软件收集"
+           data-author="" >
+            <span class="post-title" title="软件资源收集">软件资源收集</span>
+            <span class="post-date" title="2024-01-15 10:14:00">2024/01/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 杂项 "
+           href="/posts/47197/"
+           data-tag="CMD,POWERSHELL"
+           data-author="" >
+            <span class="post-title" title="Win命令行">Win命令行</span>
+            <span class="post-date" title="2023-12-25 09:27:00">2023/12/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/48906/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="SpringBoot定时任务">SpringBoot定时任务</span>
+            <span class="post-date" title="2023-12-15 09:33:00">2023/12/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/52186/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="Mybatis自动注入数据">Mybatis自动注入数据</span>
+            <span class="post-date" title="2023-12-09 09:27:00">2023/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/22662/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="全局异常拦截器">全局异常拦截器</span>
+            <span class="post-date" title="2023-12-08 09:15:00">2023/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/19207/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="拦截注解注入数据">拦截注解注入数据</span>
+            <span class="post-date" title="2023-12-03 08:54:00">2023/12/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/16441/"
+           data-tag="ftp"
+           data-author="" >
+            <span class="post-title" title="ftp文件上传">ftp文件上传</span>
+            <span class="post-date" title="2023-11-03 11:10:00">2023/11/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/45461/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="Rsa加密解密">Rsa加密解密</span>
+            <span class="post-date" title="2023-10-31 08:42:00">2023/10/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/4243/"
+           data-tag="java,fastjson2"
+           data-author="" >
+            <span class="post-title" title="fastjson2">fastjson2</span>
+            <span class="post-date" title="2023-10-17 15:20:00">2023/10/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/4636/"
+           data-tag="java,httpclient"
+           data-author="" >
+            <span class="post-title" title="HttpClient">HttpClient</span>
+            <span class="post-date" title="2023-10-17 15:20:00">2023/10/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/21497/"
+           data-tag="maven"
+           data-author="" >
+            <span class="post-title" title="maven">maven</span>
+            <span class="post-date" title="2023-09-25 15:20:00">2023/09/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 数据库 "
+           href="/posts/14691/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="PostgreSql">PostgreSql</span>
+            <span class="post-date" title="2023-08-01 14:34:00">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/33141/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="poi-tl">poi-tl</span>
+            <span class="post-date" title="2023-05-28 15:03:00">2023/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/5518/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="EasyExcel">EasyExcel</span>
+            <span class="post-date" title="2023-05-28 15:02:00">2023/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/9964/"
+           data-tag="spring,后端"
+           data-author="" >
+            <span class="post-title" title="spring">spring</span>
+            <span class="post-date" title="2023-03-02 19:16:32">2023/03/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 数据库 "
+           href="/posts/62688/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="Mysql">Mysql</span>
+            <span class="post-date" title="2023-03-01 19:04:16">2023/03/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/14284/"
+           data-tag="spring,mybatis"
+           data-author="" >
+            <span class="post-title" title="springSSM整合">springSSM整合</span>
+            <span class="post-date" title="2023-02-28 19:20:33">2023/02/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 后端 "
+           href="/posts/62590/"
+           data-tag="数据库,后端,mybatis"
+           data-author="" >
+            <span class="post-title" title="mybatis">mybatis</span>
+            <span class="post-date" title="2023-02-26 14:57:00">2023/02/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 收集 "
+           href="/posts/49096/"
+           data-tag="网址收集"
+           data-author="" >
+            <span class="post-title" title="网址收集">网址收集</span>
+            <span class="post-date" title="2023-02-05 21:07:44">2023/02/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 安装 "
+           href="/posts/27888/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Centos7安装Emqx">Centos7安装Emqx</span>
+            <span class="post-date" title="2023-02-05 21:02:26">2023/02/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 安装 "
+           href="/posts/3720/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Centos7安装Mysql8">Centos7安装Mysql8</span>
+            <span class="post-date" title="2023-02-05 21:02:26">2023/02/05</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-后台开发/Rsa" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Rsa加密解密</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="后端">后端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">java</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-01-22 19:24:30'>2023-10-31 08:42</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code class="java">import org.apache.hc.client5.http.utils.Base64;
+
+import javax.crypto.Cipher;
+import java.io.ByteArrayOutputStream;
+import java.nio.charset.StandardCharsets;
+import java.security.*;
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
+/**
+ * RsaException 是我自己写的一个异常用于抛出并全局捕获,使用时可以自己定义. 
+ */ 
+public class RsaUtil &#123;
+
+    /**
+     * RSA最大加密明文大小
+     */
+    private static final int MAX_ENCRYPT_BLOCK = 117;
+
+    /**
+     * RSA最大解密密文大小
+     */
+    private static final int MAX_DECRYPT_BLOCK = 128;
+    private static final KeyFactory keyFactory;
+
+    static &#123;
+        try &#123;
+            keyFactory = KeyFactory.getInstance(&quot;RSA&quot;);
+        &#125; catch (NoSuchAlgorithmException e) &#123;
+            throw new RuntimeException(e);
+        &#125;
+    &#125;
+
+    /**
+     * 获取密钥对
+     *
+     * @return 密钥对
+     */
+    public static KeyPair getKeyPair() throws Exception &#123;
+        KeyPairGenerator generator = KeyPairGenerator.getInstance(&quot;RSA&quot;);
+        generator.initialize(1024);
+        return generator.generateKeyPair();
+    &#125;
+
+    /**
+     * 获取私钥
+     *
+     * @param privateKey 私钥字符串
+     */
+    public static PrivateKey getPrivateKey(String privateKey) throws Exception &#123;
+        byte[] decodedKey = Base64.decodeBase64(privateKey.getBytes());
+        PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(decodedKey);
+        return keyFactory.generatePrivate(keySpec);
+    &#125;
+
+    /**
+     * 获取公钥
+     *
+     * @param publicKey 公钥字符串
+     */
+    public static PublicKey getPublicKey(String publicKey) throws Exception &#123;
+        byte[] decodedKey = Base64.decodeBase64(publicKey.getBytes());
+        X509EncodedKeySpec keySpec = new X509EncodedKeySpec(decodedKey);
+        return keyFactory.generatePublic(keySpec);
+    &#125;
+
+    /**
+     * RSA加密
+     *
+     * @param data      待加密数据
+     * @param publicKey 公钥
+     */
+    public static String encrypt(String data, String publicKey) &#123;
+        try &#123;
+            Cipher cipher = Cipher.getInstance(&quot;RSA&quot;);
+            cipher.init(Cipher.ENCRYPT_MODE, getPublicKey(publicKey));
+            int inputLen = data.getBytes().length;
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            int offset = 0;
+            byte[] cache;
+            int i = 0;
+            // 对数据分段加密
+            while (inputLen - offset &gt; 0) &#123;
+                if (inputLen - offset &gt; MAX_ENCRYPT_BLOCK) &#123;
+                    cache = cipher.doFinal(data.getBytes(), offset, MAX_ENCRYPT_BLOCK);
+                &#125; else &#123;
+                    cache = cipher.doFinal(data.getBytes(), offset, inputLen - offset);
+                &#125;
+                out.write(cache, 0, cache.length);
+                i++;
+                offset = i * MAX_ENCRYPT_BLOCK;
+            &#125;
+            byte[] encryptedData = out.toByteArray();
+            out.close();
+            // 获取加密内容使用base64进行编码,并以UTF-8为标准转化成字符串
+            // 加密后的字符串
+            return Base64.encodeBase64String(encryptedData);
+        &#125; catch (Exception e) &#123;
+            throw new RsaException(&quot;RSA 加密失败!&quot;);
+        &#125;
+    &#125;
+
+    /**
+     * RSA解密
+     *
+     * @param data       待解密数据
+     * @param privateKey 私钥
+     */
+    public static String decrypt(String data, String privateKey) &#123;
+        try &#123;
+            Cipher cipher = Cipher.getInstance(&quot;RSA&quot;);
+            cipher.init(Cipher.DECRYPT_MODE, getPrivateKey(privateKey));
+            byte[] dataBytes = Base64.decodeBase64(data);
+            int inputLen = dataBytes.length;
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            int offset = 0;
+            byte[] cache;
+            int i = 0;
+            // 对数据分段解密
+            while (inputLen - offset &gt; 0) &#123;
+                if (inputLen - offset &gt; MAX_DECRYPT_BLOCK) &#123;
+                    cache = cipher.doFinal(dataBytes, offset, MAX_DECRYPT_BLOCK);
+                &#125; else &#123;
+                    cache = cipher.doFinal(dataBytes, offset, inputLen - offset);
+                &#125;
+                out.write(cache, 0, cache.length);
+                i++;
+                offset = i * MAX_DECRYPT_BLOCK;
+            &#125;
+            byte[] decryptedData = out.toByteArray();
+            out.close();
+            // 解密后的内容
+            return new String(decryptedData, StandardCharsets.UTF_8);
+        &#125; catch (Exception e) &#123;
+            throw new RsaException(&quot;RSA 解密失败!&quot;);
+        &#125;
+
+    &#125;
+
+    /**
+     * 签名
+     *
+     * @param data       待签名数据
+     * @param privateKey 私钥
+     * @return 签名
+     */
+    public static String sign(String data, String privateKey) throws Exception &#123;
+        byte[] keyBytes = getPrivateKey(privateKey).getEncoded();
+        PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
+        KeyFactory keyFactory = KeyFactory.getInstance(&quot;RSA&quot;);
+        PrivateKey key = keyFactory.generatePrivate(keySpec);
+        Signature signature = Signature.getInstance(&quot;MD5withRSA&quot;);
+        signature.initSign(key);
+        signature.update(data.getBytes());
+        return new String(Base64.encodeBase64(signature.sign()));
+    &#125;
+
+    /**
+     * 验签
+     *
+     * @param srcData   原始字符串
+     * @param publicKey 公钥
+     * @param sign      签名
+     * @return 是否验签通过
+     */
+    public static boolean verify(String srcData, String publicKey, String sign) throws Exception &#123;
+        byte[] keyBytes = getPublicKey(publicKey).getEncoded();
+        X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
+        PublicKey key = keyFactory.generatePublic(keySpec);
+        Signature signature = Signature.getInstance(&quot;MD5withRSA&quot;);
+        signature.initVerify(key);
+        signature.update(srcData.getBytes());
+        return signature.verify(Base64.decodeBase64(sign.getBytes()));
+    &#125;
+
+    public static void demoMain() &#123;
+        try &#123;
+            // 生成密钥对
+            KeyPair keyPair = getKeyPair();
+            String privateKey = new String(Base64.encodeBase64(keyPair.getPrivate().getEncoded()));
+            String publicKey = new String(Base64.encodeBase64(keyPair.getPublic().getEncoded()));
+            System.out.println(&quot;私钥:&quot; + privateKey);
+            System.out.println(&quot;公钥:&quot; + publicKey);
+            // RSA加密
+            String data = &quot;待加密的文字内容&quot;;
+            String encryptData = encrypt(data, publicKey);
+            System.out.println(&quot;加密后内容:&quot; + encryptData);
+            // RSA解密
+            String decryptData = decrypt(encryptData, privateKey);
+            System.out.println(&quot;解密后内容:&quot; + decryptData);
+
+            // RSA签名
+            String sign = sign(data, privateKey);
+            // RSA验签
+            boolean result = verify(data, publicKey, sign);
+            System.out.print(&quot;验签结果:&quot; + result);
+        &#125; catch (Exception e) &#123;
+            System.out.print(&quot;加解密异常&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<blockquote>
+<p>ps: 生成一对密钥后就可以直接使用了,不要使用两次不同公钥对私钥进行解密.</p>
+</blockquote>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 552px;
+    }
+    .nav.fullscreen {
+        margin-left: -552px;
+    }
+    .nav-left {
+        width: 130px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

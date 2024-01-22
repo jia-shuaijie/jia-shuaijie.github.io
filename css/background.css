@@ -1,0 +1,8 @@
+/* 
+  背景渐变 
+  找渐变色可以去该网址 https://webgradients.com/
+*/
+#web_bg {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+}
