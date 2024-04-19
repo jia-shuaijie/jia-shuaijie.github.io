@@ -4,7 +4,7 @@ import { defineUserConfig } from 'vuepress';
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 
 export default defineUserConfig({
-  base: '/jia-shuaijie.github.io/',
+  base: '/',
   lang: 'zh-CN',
   title: '寻 ',
   description: '这是我的第一个 VuePress 站点',
