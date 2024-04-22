@@ -24,7 +24,7 @@ export default defineUserConfig({
         children: [
           {
             text: 'Java',
-            link: '/dev/java/spring'
+            link: '/dev/java/index'
           },
           {
             text: '数据库',
@@ -50,6 +50,7 @@ export default defineUserConfig({
         {
           "text": 'Java',
           children: [
+            '/dev/java/index.md',
             '/dev/java/spring.md',
             '/dev/java/mybatis.md',
             '/dev/java/springSSM整合.md',

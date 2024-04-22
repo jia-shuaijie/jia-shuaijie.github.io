@@ -1,9 +1,12 @@
 # fastjson2
 
-## 引入依赖
+文档地址:
 
 github文档: <https://github.com/alibaba/fastjson2>
+
 gitee文档: <https://gitee.com/wenshao/fastjson2>
+
+maven引入依赖:
 
 ```xml
 <dependency>
@@ -15,124 +18,77 @@ gitee文档: <https://gitee.com/wenshao/fastjson2>
 
 ## 简单使用
 
-### 将 json 解析为JSONObject
+### JSON字符串与JavaObject相互转换
 
 ```java
-String text = "...";
-JSONObject data = JSON.parseObject(text);
+  @Test
+  public void jsonTest() {
+      @Data
+      class User {
+          public int id;
+          public String name;
+      }
 
-byte[] bytes = ...;
-JSONObject data = JSON.parseObject(bytes);
+      User user = new User();
+      user.id = 2;
+      user.name = "FastJson2";
+      String userJsonStr = JSON.toJSONString(user);
+      log.info("Java对象转换为Json字符串: {}", userJsonStr);
+      // 输出结果 Java对象转换为Json字符串: {"id":2,"name":"FastJson2"}
+
+      String userJsonStr1 = JSONObject.toJSONString(user);
+      log.info("Java对象转换为Json字符串: {}", userJsonStr1);
+      // 输出结果 Java对象转换为Json字符串: {"id":2,"name":"FastJson2"}
+
+      User user1 = JSON.parseObject(userJsonStr, User.class);
+      log.info("JSON转换为Java对象后: {}", user1);
+      // 输出结果: JSON转换为Java对象后: User(id=2, name=FastJson2)
+
+      User user2 = JSONObject.parseObject(userJsonStr1, User.class);
+      log.info("JSON转换为Java对象后: {}", user2);
+      // 输出结果: JSON转换为Java对象后: User(id=2, name=FastJson2)
+      /*
+          小结:
+              当我们仅转换一个对象时我们使用 JSON.parseObject()或JSONObject.parseObject()方法 都可以做到java对象的转换
+        */
+  }
 ```
 
-### 将json解析为JSONArray
+### JSONArray与Java的List相互转换
 
 ```java
-String text = "...";
-JSONArray data = JSON.parseArray(text);
-```
+  @Test
+  public void jsonArrayTest() {
 
-### 将json解析为Java对象
+      List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+      String jsonString = JSON.toJSONString(list);
+      log.info("jsonString: {}", jsonString);
+      // 输出结果 jsonString: [1,2,3,4,5,6,7]
 
-```java
-String text = "...";
-User data = JSON.parseObject(text, User.class);
-```
+      String jsonString2 = JSONObject.toJSONString(list);
+      log.info("jsonString: {}", jsonString2);
+      // 输出结果 jsonString: [1,2,3,4,5,6,7]
 
-### 将java对象序列化为JSON
+      String jsonString1 = JSONArray.toJSONString(list);
+      log.info("jsonString: {}", jsonString1);
+      // 输出结果 jsonString: [1,2,3,4,5,6,7]
 
-```java
-Object data = "...";
-String text = JSON.toJSONString(data);
-byte[] text = JSON.toJSONBytes(data);
-```
+      List list1 = JSON.parseObject(jsonString, List.class);
+      log.info("转换后的List: {}", list1);
+      // 输出结果 转换后的List: [1, 2, 3, 4, 5, 6, 7]
 
-## 使用 JSONObject/JSONArray
+      List list2 = JSONObject.parseObject(jsonString2, List.class);
+      log.info("转换后的List: {}", list2);
+      // 输出结果 转换后的List: [1, 2, 3, 4, 5, 6, 7]
 
-### 获取简单属性
+      List<Integer> integers = JSONArray.parseArray(jsonString1, Integer.class);
+      log.info("转换后的List: {}", integers);
+      // 输出结果 转换后的List: [1, 2, 3, 4, 5, 6, 7]
+      /*
+          小结:
+              当在使用fastjson2时，如果要转换的json字符串是数组，那么需要使用JSONArray.parseArray()方法.
+              因为我们需要转换为指定的对象而不是List<Object>
 
-```java
-String text = "{\"id\": 2,\"name\": \"fastjson2\"}";
-JSONObject obj = JSON.parseObject(text);
-
-int id = obj.getIntValue("id");
-String name = obj.getString("name");
-```
-
-```java
-String text = "[2, \"fastjson2\"]";
-JSONArray array = JSON.parseArray(text);
-
-int id = array.getIntValue(0);
-String name = array.getString(1);
-```
-
-### 读取javaBean
-
-```java
-JSONArray array = ...
-JSONObject obj = ...
-
-User user = array.getObject(0, User.class);
-User user = obj.getObject("key", User.class);
-```
-
-### 转换为JavaBean
-
-```java
-JSONArray array = ...
-JSONObject obj = ...
-
-User user = obj.toJavaObject(User.class);
-List<User> users = array.toJavaList(User.class);
-```
-
-## JSONB 使用
-
-### 将 JavaBean对象序列化JSONB
-
-```java
-User user = ...;
-byte[] bytes = JSONB.toBytes(user);
-byte[] bytes = JSONB.toBytes(user, JSONWriter.Feature.BeanToArray);
-```
-
-## 将 JSONB数据解析为JavaBean
-
-```java
-byte[] bytes = ...
-User user = JSONB.parseObject(bytes, User.class);
-User user = JSONB.parseObject(bytes, User.class, JSONReader.Feature.SupportBeanArrayMapping);
-```
-
-## JSONPath 使用
-
-### 使用JSONPath读取部分数据
-
-```java
-String text = ...;
-JSONPath path = JSONPath.of("$.id"); // 缓存起来重复使用能提升性能
-
-JSONReader parser = JSONReader.of(text);
-Object result = path.extract(parser);
-```
-
-### 使用JSONPath读取部分byte[]的数据
-
-```java
-byte[] bytes = ...;
-JSONPath path = JSONPath.of("$.id"); // 缓存起来重复使用能提升性能
-
-JSONReader parser = JSONReader.of(bytes);
-Object result = path.extract(parser);
-```
-
-### 使用JSONPath读取部分byte[]的数据
-
-```java
-byte[] bytes = ...;
-JSONPath path = JSONPath.of("$.id"); // 缓存起来重复使用能提升性能
-
-JSONReader parser = JSONReader.ofJSONB(bytes); // 注意这里使用ofJSONB方法
-Object result = path.extract(parser);
+        */
+  }
 ```
