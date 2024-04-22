@@ -35,6 +35,14 @@ github-netty: <https://github.com/dongzl/netty-handbook/tree/master/docs>
 
 字节跳动静态资源公共库: <https://cdn.bytedance.com/>
 
+## Lunix资源下载站
+
+deb/rpm/...资源下载: <https://pkgs.org/>
+
+ubuntu资源下载站: <http://archive.ubuntu.com/ubuntu/pool/>
+
+上海交通大学Linux用户资源: <https://mirrors.sjtug.sjtu.edu.cn/>
+
 ## 官网地址
 
 Mysql官网社区下载地址: <https://dev.mysql.com/downloads/mysql>
