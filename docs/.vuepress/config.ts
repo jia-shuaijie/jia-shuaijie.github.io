@@ -56,6 +56,7 @@ export default defineUserConfig({
             '/dev/java/springSSM整合.md',
             '/dev/java/mybatis字段自动注入.md',
             '/dev/java/springboot定时任务.md',
+            '/dev/java/redis-rank.md',
             '/dev/java/redisUtils.md',
             '/dev/java/rsa-encryption.md',
             '/dev/java/poi-tl.md',
