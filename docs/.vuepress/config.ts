@@ -64,6 +64,7 @@ export default defineUserConfig({
             '/dev/java/http-client.md',
             '/dev/java/maven.md',
             '/dev/java/springboot-统一数据返回类.md',
+            '/dev/java/springboot-swagger.md',
             '/dev/java/springboot-自定义脱敏注解.md',
             '/dev/java/springboot-处理类-全局异常处理类.md',
             '/dev/java/springboot-拦截器注入数据.md',
