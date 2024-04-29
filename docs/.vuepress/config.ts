@@ -63,6 +63,8 @@ export default defineUserConfig({
             '/dev/java/fastjson2.md',
             '/dev/java/http-client.md',
             '/dev/java/maven.md',
+            '/dev/java/工厂模式.md',
+            '/dev/java/责任链模式.md',
             '/dev/java/springboot-统一数据返回类.md',
             '/dev/java/springboot-swagger.md',
             '/dev/java/springboot-自定义脱敏注解.md',
