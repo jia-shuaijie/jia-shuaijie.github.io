@@ -37,6 +37,10 @@ MyComputerManager `[win快捷方式移除软件]`
 
 - github: <https://github.com/1357310795/MyComputerManager/releases>
 
+notepad-- `多平台文本编辑器`
+
+- gitee: <https://gitee.com/cxasm/notepad--/releases>
+
 ---
 
 ## idea插件收集
