@@ -1,36 +1,50 @@
-name: docs
+name: 部署文档
 
 on:
-  # 每当 push 到 main 分支时触发部署
   push:
-    branches: [main]
-  # 手动触发部署
-  workflow_dispatch:
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-  docs:
+  deploy-gh-pages:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-            node-version: 16
-            cache: npm
-      - run: npm install
+          fetch-depth: 0
+          # 如果你文档需要 Git 子模块，取消注释下一行
+          # submodules: true
 
-      - name: Build
-        run: npm run build
 
-      # 查看 workflow 的文档来获取更多信息
-      # @see https://github.com/crazy-max/ghaction-github-pages
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
         with:
-          # 部署到 gh-pages 分支
-          target_branch: gh-pages
-          # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
+          node-version: 20
+          cache: npm
+
+      - name: 安装依赖
+        run: |
+          corepack enable
+          npm ci
+
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          npm run docs:build
+          > src/.vuepress/dist/.nojekyll
+
+      - name: 部署文档
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # 部署文档
+          branch: gh-pages
+          folder: src/.vuepress/dist
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
