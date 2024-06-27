@@ -1,12 +1,12 @@
 ---
-icon: pen-to-square
 date: 2024-06-24
-category:
-  - 收集
+article: false
 ---
 # 软件收集
 
 ## 软件
+
+JD_GUI jdk反编译软件: <http://java-decompiler.github.io/>
 
 Geek `[win卸载软件]`: <https://geekuninstaller.com/download>
 

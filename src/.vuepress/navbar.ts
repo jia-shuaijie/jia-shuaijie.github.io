@@ -5,12 +5,7 @@ export default navbar([
   {
     text: "收集",
     icon: "book",
-    link: "/collect/",
-  },
-  {
-    text: "安装",
-    icon: "book",
-    link: "/install/",
+    link: "/collect/dev",
   },
 /*   {
     text: "安装",

@@ -1,54 +1,65 @@
 ---
-icon: pen-to-square
-date: 2024-06-24
+icon: book
+date: 2024-06-26
 category:
   - 后端开发
   - spring系列
 tag:
   - java
+order: 3
 ---
-# mybatis
+# Mybatis
 
 简介:
-> MyBatis 本是 apache 的一个开源项目 iBatis,2010 年这个项目由 apache software foundation 迁移到了 google code,并且改名为MyBatis 。
-> 2013 年 11 月迁移到 Github。iBATIS 一词来源于“internet”和“abatis”的组合,是一个基于 Java 的持久层框架。
-> iBATIS 提供的持久层框架包括 SQL Maps 和 Data Access Objects(DAO)。
-> Mybatis 基于java的持久层框架,它的内部封装了JDBC,让开发人员只需要关注SQL语句本身,不需要花费精力在驱动的加载、连接的创建、Statement的创建等复杂的过程。
-> Mybatis通过XML或注解的方式将要执行的各种的statement配置起来,并通过java对象和statement中的sql的动态参数进行映射生成最终执行的SQL语句,最后由mybatis框架执行SQL,并将结果直接映射为java对象。
-> 采用了ORM思想解决了实体类和数据库表映射的问题,对JDBC进行了封装,屏蔽了JDBCAPI底层的访问细节,避免我们与jdbc的api打交道,就能完成对数据的持久化操作。
->> ORM 中分别表示为:
->> O -->  Object Java对象 POJO
->> R --> Relation 关系,就是数据库中的一张表
->> M --> mapping 映射
->>
+MyBatis 本是 apache 的一个开源项目 iBatis,2010 年这个项目由 apache software foundation 迁移到了 google code,并且改名为MyBatis 。
+
+2013 年 11 月迁移到 Github。iBATIS 一词来源于“internet”和“abatis”的组合,是一个基于 Java 的持久层框架。
+
+iBATIS 提供的持久层框架包括 SQL Maps 和 Data Access Objects(DAO)。
+
+Mybatis 基于java的持久层框架,它的内部封装了JDBC,让开发人员只需要关注SQL语句本身,不需要花费精力在驱动的加载、连接的创建、Statement的创建等复杂的过程。
+
+Mybatis通过XML或注解的方式将要执行的各种的statement配置起来,并通过java对象和statement中的sql的动态参数进行映射生成最终执行的SQL语句,最后由mybatis框架执行SQL,并将结果直接映射为java对象。
+
+采用了ORM思想解决了实体类和数据库表映射的问题,对JDBC进行了封装,屏蔽了JDBCAPI底层的访问细节,避免我们与jdbc的api打交道,就能完成对数据的持久化操作。
+
+ORM 中分别表示为:
+
+- O -->  Object Java对象 POJO
+- R --> Relation 关系,就是数据库中的一张表
+- M --> mapping 映射
+
 ## Mybaits 对象分析
 
-1. `Resources`
-    Resources 类,顾名思义就是资源,用于读取资源文件。其有很多方法通过加载并解析资源文件,返回不同类型的`IO`流对象。
-2. `SqlSessionFactoryBuilder`
-    `SqlSessionFactory`的创建,需要使用`SqlSessionFactoryBuilder`对象的build()方法
-    事实上使用`SqlSessionFactoryBuilder`的原因是将SqlSessionFactory这个复杂对象的创建交由Builder来执行,也就是使用了建造者设计模式。
+### Resources
 
-    建造者模式
-        又称生成器模式,是一种对象的创建模式。
-        可以将一个产品的内部表象与产品的生成过程分割开来, 从而可以使一个建造过程生成具有不同的内部表象的产品(将一个复杂对象的构建与它的表示分离, 使得同样的构建过程可以创建不同的表示).
-        这样用户只需指定需要建造的类型就可以得到具体产品,而不需要了解具体的建造过程和细节.
-        在建造者模式中,角色分指导者(`Director`)与建造者(`Builder`)
-            用户联系指导者, 指导者指挥建造者, 最后得到产品. 建造者模式可以强制实行一种分步骤进行的建造过程.
+Resources 类,顾名思义就是资源,用于读取资源文件。其有很多方法通过加载并解析资源文件,返回不同类型的`IO`流对象。
 
-3. `SqlSessionFactory`
-    SqlSessionFactory 接口对象是一个重量级对象(系统开销大的对象),是线程安全的,所以一个应用只需要一个该对象即可。
+### SqlSessionFactoryBuilder
 
-    创建`SqlSession`需要使用`SqlSessionFactory`接口的的 openSession()方法。
+`SqlSessionFactory`的创建,需要使用`SqlSessionFactoryBuilder`对象的build()方法,事实上使用`SqlSessionFactoryBuilder`的原因是将SqlSessionFactory这个复杂对象的创建交由Builder来执行,也就是使用了建造者设计模式。
 
-4. 默认的 openSession()方法没有参数,它会创建有如下特性的 SqlSession
-    1. 会开启一个事务(也就是不自动提交)。
-    2. 将从由当前环境配置的 DataSource 实例中获取 Connection 对象。事务隔离级别将会使用驱动或数据源的默认设置。
-    3. 预处理语句不会被复用,也不会批量处理更新。
-    4. 当参数为 TRUE 是 会自动提交, FALSE 时需要手动提交, 默认为 false.
+建造者模式
 
-5. `SqlSession` 接口对象用于执行持久化操作
-    `SqlSession` 中一次会话已创建`SqlSession`对象开始到`SqlSession`对象关闭为结束.
+- 又称生成器模式,是一种对象的创建模式。
+- 可以将一个产品的内部表象与产品的生成过程分割开来, 从而可以使一个建造过程生成具有不同的内部表象的产品(将一个复杂对象的构建与它的表示分离, 使得同样的构建过程可以创建不同的表示).
+- 这样用户只需指定需要建造的类型就可以得到具体产品,而不需要了解具体的建造过程和细节.
+- 在建造者模式中,角色分指导者(`Director`)与建造者(`Builder`) 用户联系指导者, 指导者指挥建造者, 最后得到产品. 建造者模式可以强制实行一种分步骤进行的建造过程.
+
+### SqlSessionFactory
+
+SqlSessionFactory 接口对象是一个重量级对象(系统开销大的对象),是线程安全的,所以一个应用只需要一个该对象即可。
+
+创建`SqlSession`需要使用`SqlSessionFactory`接口的的 openSession()方法。
+
+默认的 openSession()方法没有参数,它会创建有如下特性的 SqlSession
+
+1. 会开启一个事务(也就是不自动提交)。
+2. 将从由当前环境配置的 DataSource 实例中获取 Connection 对象。事务隔离级别将会使用驱动或数据源的默认设置。
+3. 预处理语句不会被复用,也不会批量处理更新。
+4. 当参数为 TRUE 是 会自动提交, FALSE 时需要手动提交, 默认为 false.
+
+SqlSession接口对象用于执行持久化操作,`SqlSession` 中一次会话已创建`SqlSession`对象开始到`SqlSession`对象关闭为结束.
 
 > PS: SqlSession 接口对象是线程不安全的,所以每次数据库会话结束前需要马上调用其 close()方法将其关闭。
 
@@ -105,7 +116,7 @@ tag:
 ```
 
 ### 创建配置文件
->
+
 >ps: Resource文件夹中创建,文件名可自定义,我这里就定义为 mybatis.xml
 
 ```xml

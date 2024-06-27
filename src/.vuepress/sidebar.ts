@@ -1,47 +1,11 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
-  "/collect": [
-    "",
-    "url",
-    "software"
-  ],
-  "/install": [
-    "",
-    {
-      text: "Linux",
-      icon: "laptop-code",
-      prefix: "linux/",
-      children: ["emqx", "mysql8"],
-    },
-    {
-      text: "Win",
-      icon: "laptop-code",
-      prefix: "win/",
-      children: ["mysql8", "nvm"],
-    },
-  ],
-  "/": [
-    "",
-    {
-      text: "如何使用",
-      icon: "laptop-code",
-      prefix: "demo/",
-      link: "demo/",
-      children: "structure",
-    },
-    {
-      text: "文章",
-      icon: "book",
-      prefix: "posts/",
-      children: "structure",
-    },
-    "intro",
-    {
-      text: "幻灯片",
-      icon: "person-chalkboard",
-      link: "https://plugin-md-enhance.vuejs.press/zh/guide/content/revealjs/demo.html",
-    },
-  ],
+  "/dev/java/spring系列":  "structure",
+  "/dev/java/设计模式":  "structure",
+  "/dev/java/工具类":  "structure",
+  "/dev/java/springboot":  "structure",
+  "/collect":  "structure",
+  "/install": "structure",
 
 });

@@ -1,8 +1,9 @@
 ---
-icon: pen-to-square
+icon: book
 date: 2024-06-24
 category:
   - 后端开发
+  - redis
 tag:
   - java
 ---
