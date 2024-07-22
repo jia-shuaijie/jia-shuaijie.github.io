@@ -10,7 +10,7 @@ category:
 
 官网下载地址为: <https://dev.mysql.com/downloads/mysql/>
 
-![mysql下载](https://img.gsimg.top/2024/03/07/f4s0bf.png)
+![mysql下载](https://i.jpg.dog/9b4c944316e3e76859ea57d8cf15bfbf.png)
 
 ## 配置Mysql
 
@@ -47,7 +47,6 @@ interactive_timeout=2147483
 mysqld --initialize --user=mysql --console  
 ```
 
-![初始化日志输出](https://img.gsimg.top/2024/03/07/fem0fp.png)
 
 ### 安装Mysql服务
 
