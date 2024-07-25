@@ -1,6 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
+  "/dev/android":  "structure",
   "/dev/java/spring系列":  "structure",
   "/dev/java/springboot":  "structure",
   "/dev/java/springCloud":  "structure",
